@@ -29,8 +29,14 @@ public class Main {
         //RegistrationPage registrationB2C  = PageFactory.initElements(driver,RegistrationPage.class);
         //registrationB2C.registrationB2C("+7 (977) 345-34-52", "1", "2","3","4","5","6", "Qwerty_12345", "Qwerty_12345", "79773453452@mail.ru", "674656051695", "C:\\Users\\eldar\\Documents\\screen1.png");
 
-        AdminDeleteUser deleteUserNow = PageFactory.initElements(driver, AdminDeleteUser.class);
-        deleteUserNow.deleteUser();
+//        AdminDeleteUser deleteUserNow = PageFactory.initElements(driver, AdminDeleteUser.class);
+//        deleteUserNow.deleteUser();
+
+        AutorizationB2C autorization = new AutorizationB2C(driver);
+        AutorizationB2C autorizationB2C = PageFactory.initElements(driver,AutorizationB2C.class);
+        autorizationB2C.clickForgotPassword();
+
+
 
 
 
