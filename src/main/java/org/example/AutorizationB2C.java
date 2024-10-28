@@ -4,8 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.json.JsonOutput;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.beans.Expression;
+import java.time.Duration;
 
 public class AutorizationB2C {
     private WebDriver driver;
@@ -22,7 +25,7 @@ public class AutorizationB2C {
     private WebElement buttonSubmit;
     @FindBy(xpath = "//a[text()='Зарегистрироваться']")
     private WebElement registration;
-    @FindBy(xpath = "//a[text()='Забыли пароль?']")
+    @FindBy(xpath = "//a[@href='/login/b2c/reset']")
     private WebElement forgotPassword;
     @FindBy(xpath = "//span[text()=' Для юридических лиц ']")
     private WebElement pageB2B;
@@ -39,6 +42,11 @@ public class AutorizationB2C {
     }
 
     public ForgotPasswordPage clickForgotPassword(){
+        if (forgotPassword != null) {
+            forgotPassword.click();
+        } else {
+            System.out.println("Element forgotPassword is null");
+        }
             forgotPassword.click();
             return new ForgotPasswordPage(driver);
     }
